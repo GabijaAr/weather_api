@@ -2,29 +2,28 @@
 
 namespace App\Providers;
 
+use App\Services\Meteo\MeteoClient;
 use Illuminate\Support\ServiceProvider;
-use Illuminate\Http\Resources\Json\JsonResource;
 
-
-class AppServiceProvider extends ServiceProvider
+class MeteoServiceProvider extends ServiceProvider
 {
     /**
-     * Register any application services.
+     * Register services.
      *
      * @return void
      */
     public function register()
     {
-        //
+
     }
 
     /**
-     * Bootstrap any application services.
+     * Bootstrap services.
      *
      * @return void
      */
     public function boot()
     {
-        JsonResource::withoutWrapping();
+        //
     }
 }

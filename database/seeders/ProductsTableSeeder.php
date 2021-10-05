@@ -23,7 +23,7 @@ class ProductsTableSeeder extends Seeder
 
         foreach (range(1,150) as $index)  {
             DB::table('products')->insert([
-                'recommendations_id'=> $faker->numberBetween($min = 1, $max = 12),
+                'recommendations_id'=> $faker->numberBetween($min = 1, $max = 6),
                 'sku' => $faker->bothify('??###'),
                 'name' => $faker->words($nb = 2, $asText = true),
                 'price' => $faker->randomFloat($nbMaxDecimals = 2, $min = 1, $max = 1000),
