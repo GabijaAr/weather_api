@@ -120,7 +120,7 @@ class MeteoClient
                         'city' => $city, 
                         'day' => $key,
                         'forecast'=> $value,
-                        'created_at' => Carbon::now(),
+                        'created_at' => Carbon::now('GMT+3'),
                     ]);                        
                 }
  
