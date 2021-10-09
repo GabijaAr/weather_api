@@ -1,7 +1,6 @@
 <?php
 
 use App\Http\Controllers\ProductController;
-use App\Http\Controllers\MeteoController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -17,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/products', [ProductController::class, 'index']);
-Route::get('/products/recommended/{city}', [MeteoController::class, 'index']);
+Route::get('/products/recommended/{city}', [ProductController::class, 'recommend']);
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();

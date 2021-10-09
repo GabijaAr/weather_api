@@ -2,9 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Product;
 use Illuminate\Http\Request;
+use App\Services\RecommendationService;
+use App\Services\MeteoService;
+use App\Models\Product;
+
 use App\Http\Resources\ProductResource;
+
 
 class ProductController extends Controller
 {
@@ -17,6 +21,13 @@ class ProductController extends Controller
     {
         return ProductResource::collection(Product::all());
 
+    }
+
+    public function recommend(MeteoService $meteoService, RecommendationService $recommendationService, Request $request, $city)
+    {
+        $weather = $meteoService->getCityWeather($city);
+        $recommendations= $recommendationService->getRecommendations($city, $weather);
+        return $recommendations;  
     }
 
 }

@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Services\Meteo;
+namespace App\Services;
 
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Http;
 use App\Models\Forecast;
 use Illuminate\Support\Facades\DB;
 
-class MeteoClient
+class MeteoService
 {
         private function getStandartWeather($code) {
                 switch ($code) {
@@ -55,7 +55,7 @@ class MeteoClient
                return $forecast;
         }
 
-        public function getCity($city){
+        public function getCityWeather($city){
                 $respDB = $this->getWheatherFromDB($city); 
                 if(count($respDB) > 0) {
                         return $respDB;          
