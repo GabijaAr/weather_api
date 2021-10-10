@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use App\Services\RecommendationService;
 use App\Services\MeteoService;
 use App\Models\Product;
-
 use App\Http\Resources\ProductResource;
 
 
@@ -25,9 +24,9 @@ class ProductController extends Controller
 
     public function recommend(MeteoService $meteoService, RecommendationService $recommendationService, Request $request, $city)
     {
-        $weather = $meteoService->getCityWeather($city);
-        $recommendations= $recommendationService->getRecommendations($city, $weather);
-        return $recommendations;  
+            $weather = $meteoService->getCityWeather($city);
+            $recommendations= $recommendationService->getRecommendations($city, $weather);            
+            return $recommendations;
     }
 
 }

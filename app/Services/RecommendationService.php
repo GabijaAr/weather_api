@@ -8,7 +8,7 @@ use App\Http\Resources\ProductResource;
 use App\Services\MeteoService;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\DB;
-
+use Illuminate\Support\Facades\Cache;
 
 class RecommendationService
 {
@@ -23,7 +23,9 @@ class RecommendationService
 
     public function getProducts($weather){
             $recommendationId = Recommendation::where('name', '=', ($weather->forecast))->get();
-            $recommendations = ProductResource::collection(Product::where('recommendations_id', '=', ($recommendationId[0]->id))->inRandomOrder()->limit(2)->get());
-    return $recommendations;
+            return ProductResource::collection(Cache::remember('recommended-products', 60, function() use ($recommendationId){
+            return Product::where('recommendations_id', '=', ($recommendationId[0]->id))->inRandomOrder()->limit(2)->get();
+        }));
     }
 }
+
