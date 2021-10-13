@@ -21,11 +21,18 @@ https://api.meteo.lt/
 
 -   ### Retrieve all products: **GET** `/api/products`
 
--   ### Retrieve specific category with 2 randomly selected products:  **GET** `/products/recommended/:city'`
+-   ### Retrieve specific category with 2 randomly selected products: **GET** `/products/recommended/:city'`
 
 ## Installation
 
 ### You can run application locally
+
+Clone the repository locally:
+
+```sh
+git clone https://github.com/GabijaAr/weather_api.git
+cd weather_api
+```
 
 To run the application write these commands into terminal:
 
