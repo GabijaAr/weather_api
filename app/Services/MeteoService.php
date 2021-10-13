@@ -66,7 +66,6 @@ class MeteoService
                 $httpClient
                 ->get("https://api.meteo.lt/v1/places/${city}/forecasts/long-term");
                
-
                 $response = json_decode($request->getBody()->getContents());
 
                 $weatherData =  (object) [];
@@ -113,8 +112,6 @@ class MeteoService
         }
 
         private function insertData($weatherForecast, $city){
-
-
                 foreach($weatherForecast as $key => $value){
                DB::table('forecasts')->insert([
                         'city' => $city, 

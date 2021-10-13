@@ -19,7 +19,6 @@ class ProductController extends Controller
     public function index()
     {
         return ProductResource::collection(Product::all());
-
     }
 
     public function recommend(MeteoService $meteoService, RecommendationService $recommendationService, Request $request, $city)
