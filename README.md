@@ -5,6 +5,7 @@ Adeo Web task for Junior PHP Back-end Developer position: Create a service, whic
 ## Application
 
 Description: This application gives user different product recommendations for three days depending on the current weather in selected location.
+Application development environment is hosted in heroku and can be accessed via following link: https://quiet-brushlands-89468.herokuapp.com
 
 ## Technology used
 
