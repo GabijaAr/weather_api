@@ -1,6 +1,6 @@
 # Weather Api
 
-Adeo Web task for Junior PHP Back-end Developer position: Create a service, which returns product recommendations depending on the weather forecast
+A service, which returns product recommendations depending on the weather forecast
 
 ## Application
 
@@ -20,9 +20,9 @@ https://api.meteo.lt/
 
 ## Usage
 
--   ### Retrieve all products: **GET** `/api/products`
+-   ### Retrieve all products: `/api/products`
 
--   ### Retrieve specific category with 2 randomly selected products: **GET** `/products/recommended/:city'`
+-   ### Retrieve specific category with 2 randomly selected products: `/products/recommended/:city'`
 
 ## Installation
 
